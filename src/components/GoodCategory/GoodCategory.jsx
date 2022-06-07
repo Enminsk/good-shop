@@ -1,8 +1,8 @@
-import './App.css';
+import css from './styles.module.css';
 
 export function GoodCategory() {
   return (
-    <div className="App">
+    <div className={css.app}>
     </div>
   );
 }

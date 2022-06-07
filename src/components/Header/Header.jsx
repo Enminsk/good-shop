@@ -1,8 +1,8 @@
-import './App.css';
+import css from './styles.module.css';
 
 export function Header() {
   return (
-    <div className="App">
+    <div className={css.app}>
     </div>
   );
 }

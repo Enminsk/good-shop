@@ -1,1 +1,1 @@
-export { Footer } from './App'
+export { Footer } from './Footer'
