@@ -2,8 +2,11 @@ import css from './styles.module.css';
 
 export function Menu() {
   return (
-    <div className={css.app}>
-    </div>
+    <>
+        <div className={css.menu}>
+            bdfbdfbfdbdfbfd
+        </div>
+    </>
   );
 }
 
