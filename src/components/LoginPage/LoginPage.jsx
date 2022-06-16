@@ -1,8 +1,8 @@
 import css from './styles.module.css';
 
-export function GoodCategory() {
+export function LoginPage() {
   return (
-      <div className={css.category}>
+      <div className={css.login}>
           anfakjhksjhfjhjkahjskfhhakfhkjsh
     </div>
   );
