@@ -1,4 +1,4 @@
-import { request } from "./request";
+import { resource } from "./request";
 
 export class Api {
     andPoints = {
@@ -6,9 +6,9 @@ export class Api {
         categories: '/api/categories',
     }
     getGoods = () => {
-        return request(this.andPoints.goods)
+        return resource(this.andPoints.goods)
     }
     getCategories = () => {
-        return request(this.andPoints.category)
+        return resource(this.andPoints.categories)
     }
 };
