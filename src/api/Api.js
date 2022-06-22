@@ -1,4 +1,4 @@
-import { resource } from "./request";
+import { resource } from "./resource";
 
 export class Api {
     andPoints = {
