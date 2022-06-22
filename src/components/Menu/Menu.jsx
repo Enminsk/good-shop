@@ -6,16 +6,11 @@ import css from './styles.module.css';
 
 export function Menu() {
     const dispatch = useDispatch();
-    const categoriesItem = useSelector(categoriesSelectors.getCategories);
-    
+    const categories = useSelector(categoriesSelectors.getCategories);
 
     useEffect(() => {
         dispatch(actions.fetchCategories())
     }, [])
-    
-
-    const { categories } = categoriesItem;
-
 
   return (
     <>
