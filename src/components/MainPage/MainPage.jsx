@@ -7,9 +7,9 @@ import { Col, Row } from 'antd';
 export function MainPage() {
   return (
       <>
-          <Row>
-              <Col flex='250px'><Menu /></Col>
-              <Col flex='auto'><GoodCategory /></Col>
+          <Row wrap={false}>
+              <Col flex="none"><Menu /></Col>
+              <Col flex="auto"><GoodCategory /></Col>
           </Row>
       </>
   );

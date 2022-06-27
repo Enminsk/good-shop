@@ -1,3 +1,4 @@
-.category {
-    text-align: center;
+.wrap {
+    display: flex;
+    flex-direction: row;
 }

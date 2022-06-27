@@ -4,24 +4,24 @@ import { Api } from "../api/Api";
 
 const api = new Api();
 
-export const fetchCategories = createAsyncThunk('categories/fetchCategories', api.getCategories);
+export const fetchPopularCategories = createAsyncThunk('categories/fetchPopularCategories', api.getPopularCategories)
 
 export const { reducer } = createSlice ({
-    name: 'categories',
+    name: 'category',
     initialState: {
-        categories: [],
+        category: [],
         loadStatus: LOAD_STATUSES.UNKNOWN,
     },
     reducers: { },
     extraReducers: {
-        [fetchCategories.pending]: (state) => {
+        [fetchPopularCategories.pending]: (state) => {
             state.loadStatus = LOAD_STATUSES.LOADING;
         },
-        [fetchCategories.fulfilled]: (state, action) => {
+        [fetchPopularCategories.fulfilled]: (state, action) => {
             state.loadStatus = LOAD_STATUSES.LOADED;
-            state.categories = action.payload.categories;
+            state.category = action.payload;
         },
-        [fetchCategories.rejected]: (state) => {
+        [fetchPopularCategories.rejected]: (state) => {
             state.loadStatus = LOAD_STATUSES.ERROR;
         },
     }
