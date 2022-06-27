@@ -4,7 +4,7 @@ import { Api } from "../api/Api";
 
 const api = new Api();
 
-export const fetchCategories = createAsyncThunk('categories/fetchCategories', api.getCategories)
+const fetchCategories = createAsyncThunk('categories/fetchCategories', api.getCategories)
 
 
 export const { reducer } = createSlice ({
@@ -13,14 +13,14 @@ export const { reducer } = createSlice ({
         categories: [],
         loadStatus: LOAD_STATUSES.UNKNOWN,
     },
-    redusers: { },
-    extraRedusers: {
+    reducers: { },
+    extraReducers: {
         [fetchCategories.pending]: (state) => {
             state.loadStatus = LOAD_STATUSES.LOADING;
         },
         [fetchCategories.fulfilled]: (state, action) => {
             state.loadStatus = LOAD_STATUSES.LOADED;
-            state.categories = action.payload;
+            state.categories = action.payload.categories;
         },
         [fetchCategories.rejected]: (state) => {
             state.loadStatus = LOAD_STATUSES.ERROR;

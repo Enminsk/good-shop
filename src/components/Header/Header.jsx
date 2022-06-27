@@ -9,9 +9,9 @@ export function Header() {
       <PageHeader
           onBack={() => null}
           title="Беда-Бедовая"
-          subTitle={[
+          subTitle={
               <Input placeholder="input search text" />
-          ]}
+          }
       ></PageHeader>
   );
 }
