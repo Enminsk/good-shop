@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { LOAD_STATUSES } from "../constants";
-import { Api } from "../api/Api";
+import { LOAD_STATUSES } from "../../constants";
+import { Api } from "../../api/Api";
 
 const api = new Api();
 
-export const fetchPopularCategories = createAsyncThunk('categories/fetchPopularCategories', api.getPopularCategories)
+export const fetchPopularCategories = createAsyncThunk('category/fetchPopularCategories', api.getPopularCategories)
 
 export const { reducer } = createSlice ({
     name: 'category',

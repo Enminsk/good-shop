@@ -1,18 +1,18 @@
-import { resource } from "./resource";
+import { request } from "./resource";
 
 export class Api {
     andPoints = {
         goods: '/api/goods',
         categories: '/api/categories',
-        popular_categories: '/api/popular_categories'
+        popularCategories: '/api/popular_categories'
     }
     getGoods = () => {
-        return resource(this.andPoints.goods)
+        return request(this.andPoints.goods)
     }
     getCategories = () => {
-        return resource(this.andPoints.categories)
+        return request(this.andPoints.categories)
     }
     getPopularCategories = () => {
-        return resource(this.andPoints.popular_categories)
+        return request(this.andPoints.popularCategories)
     }
 };

@@ -1,27 +1,26 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-/* import { actions, categoriesSelectors } from '../../store'; */
-import { fetchCategories } from '../../store/categoriesSlice';
+import { Link } from 'react-router-dom';
+import { fetchCategories } from '../../store/categoriesSlice/categoriesSlice';
+import { categoriesSelectors } from '../../store';
 import css from './styles.module.css';
 
 
 export function Menu() {
     const dispatch = useDispatch();
-    const categories = useSelector((state) => state.categories.categories);
+    const categories = useSelector(categoriesSelectors.getCategoriesSelector);
 
     useEffect(() => {
         dispatch(fetchCategories())
     }, [dispatch])
 
   return (
-    <>
         <div className={css.menu}>
-              <ul >
-                  {categories.map(({ label, id }) =>
-                      <li key={id}>{label}</li>)}
-              </ul>
+                {categories.map(({ label, id }) =>
+                    <Link key={id} to={`/category/${id}`}>
+                        <li>{label}</li>
+                    </Link>)}
         </div>
-    </>
   );
 }
 
