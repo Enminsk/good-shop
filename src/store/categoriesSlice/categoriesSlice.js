@@ -1,11 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { LOAD_STATUSES } from "../constants";
-import { Api } from "../api/Api";
+import { LOAD_STATUSES } from "../../constants";
+import { Api } from "../../api/Api";
 
 const api = new Api();
 
-const fetchCategories = createAsyncThunk('categories/fetchCategories', api.getCategories)
-
+export const fetchCategories = createAsyncThunk('categories/fetchCategories', api.getCategories);
 
 export const { reducer } = createSlice ({
     name: 'categories',
@@ -26,8 +25,5 @@ export const { reducer } = createSlice ({
             state.loadStatus = LOAD_STATUSES.ERROR;
         },
     }
-})
+});
 
-export const actions = {
-    fetchCategories
-};
