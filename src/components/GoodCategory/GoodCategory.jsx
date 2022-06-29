@@ -14,18 +14,16 @@ export function GoodCategory() {
     }, [dispatch])
 
     return (
-        <>
-            <ul>
-                {category.map(({ category: {id, label}, items }) =>
-                    <Link key={id} to={`/category/${id}`}>
-                       <li>{label}</li>
-                        <div className={css.wrap}>
-                            {items.map(({ label, id, price, img }) =>
-                                <Card key={id} label={label} id={id} price={price} img={img} />).slice(0, 6)}
-                        </div>
-                    </Link>)}
-            </ul>
-        </>
+        <ul>
+            {category.map(({ category: { id, label }, items }) =>
+                <Link key={id} to={`/category/${id}`}>
+                    <li>{label}</li>
+                    <div className={css.wrap}>
+                        {items.map(({ label, id, price, img }) =>
+                            <Card key={id} label={label} id={id} price={price} img={img} />).slice(0, 6)}
+                    </div>
+                </Link>)}
+        </ul>
     );
 }
 

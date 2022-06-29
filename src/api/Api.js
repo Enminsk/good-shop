@@ -15,4 +15,8 @@ export class Api {
     getPopularCategories = () => {
         return request(this.andPoints.popularCategories)
     }
+    getGoodsByCategoryId = (categoryTypeIds) => {
+        const url = this.andPoints.goods;
+        return request(url, `categoryTypeIds=${categoryTypeIds}`)
+    }
 };
