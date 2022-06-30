@@ -17,6 +17,6 @@ export class Api {
     }
     getGoodsByCategoryId = (categoryTypeIds) => {
         const url = this.andPoints.goods;
-        return request(url, `categoryTypeIds=${categoryTypeIds}`)
+        return request(url, { categoryTypeIds })
     }
 };

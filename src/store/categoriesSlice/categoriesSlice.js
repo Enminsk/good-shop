@@ -1,13 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { LOAD_STATUSES } from "../../constants";
+import { LOAD_STATUSES, CATEGORIES } from "../constants";
 import { Api } from "../../api/Api";
 
 const api = new Api();
 
-export const fetchCategories = createAsyncThunk('categories/fetchCategories', api.getCategories);
+export const fetchCategories = createAsyncThunk(`${CATEGORIES}/fetchCategories`, api.getCategories);
 
 export const { reducer } = createSlice ({
-    name: 'categories',
+    name: CATEGORIES,
     initialState: {
         categories: [],
         loadStatus: LOAD_STATUSES.UNKNOWN,

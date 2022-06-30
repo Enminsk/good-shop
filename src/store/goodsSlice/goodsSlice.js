@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { LOAD_STATUSES } from "../constants";
-import { Api } from "../api/Api";
+import { Api } from "../../api/Api";
 
 const api = new Api();
 

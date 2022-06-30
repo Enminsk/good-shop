@@ -20,7 +20,7 @@ export function GoodCategory() {
                     <li>{label}</li>
                     <div className={css.wrap}>
                         {items.map(({ label, id, price, img }) =>
-                            <Card key={id} label={label} id={id} price={price} img={img} />).slice(0, 6)}
+                            <Card key={id} label={label} id={id} price={price} img={img} />).slice(0, 5)}
                     </div>
                 </Link>)}
         </ul>
