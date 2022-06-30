@@ -1,32 +1,28 @@
-import React from 'react';
-import { useSelector, useDispatch } from "react-redux";
-import { useParams } from 'react-router';
 import { useEffect } from 'react';
-import { fetchPopularCategories } from '../../store/popularCategoriesSlice/popularCategoriesSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams, Link } from 'react-router-dom';
+import { fetchCategoryPage } from '../../store/categoryPageSlice';
+import { categoryPageSelectors } from '../../store/categoryPageSlice';
 import { Card } from '../Card';
+import { Divider, Row } from 'antd';
 import css from './styles.module.css';
 
-
 export const CategoryPage = () => {
-    const dispatch = useDispatch();
-    const { id } = useParams();
-    const category = useSelector((state) => state.category.category);
+    const { id } = useParams()
+    const categoryPage = useSelector(categoryPageSelectors.getCategoryPageSelectors)
+    const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(fetchPopularCategories())
+        dispatch(fetchCategoryPage(id))
     }, [id])
 
     return (
-            <ul>
-                {category.map(({ category, items }) =>
-                    <li key={category.id}>
-                        {category.label}
-                        <div className={css.wrap}>
-                            {items.map(({ label, id, price, img }) =>
-                                <Card key={id} label={label} id={id} price={price} img={img} />).slice(0, 6)}
-                        </div>
-                    </li>)}
-            </ul>
+            <Row justify="center">
+                {categoryPage.map(({ id, label, price, img, categoryTypeId }) => (
+                    <Link key={id} to={`/${categoryTypeId}/${id}`}>
+                        <Card label={label} id={id} price={price} img={img} />
+                    </Link>
+                ))}
+            </Row>
     )
 }
-

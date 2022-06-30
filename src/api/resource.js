@@ -7,7 +7,7 @@
     return await res.json();
 }; */
 
-export const request = (url, params = {} ) => {
+export const request = (url, params) => {
         const urlParams = new URLSearchParams(params).toString();
 
         return fetch(`${url}?${urlParams}`).then((response) => {
