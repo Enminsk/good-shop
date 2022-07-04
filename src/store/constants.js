@@ -8,3 +8,5 @@ export const LOAD_STATUSES = {
 export const CATEGORIES = 'categories';
 export const POPULAR_CATEGORY = 'popularCategory';
 export const CATEGORY_PAGE = 'categoryPage';
+export const PRODUCT_PAGE = 'productPage';
+export const GOODS = 'goods';
