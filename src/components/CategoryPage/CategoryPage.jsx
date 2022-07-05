@@ -6,7 +6,7 @@ import { categoryPageSelectors } from '../../store/categoryPageSlice';
 import { Card } from '../Card';
 import { Spinner } from '../common';
 import { Row } from 'antd';
-import css from './styles.module.css';
+import { Notfoundpage } from '../Notfoundpage';
 
 export const CategoryPage = ({ categories }) => {
     const { id } = useParams()
@@ -29,7 +29,7 @@ export const CategoryPage = ({ categories }) => {
                         <Card label={label} id={id} price={price} img={img} />
                     </Link>
                 ))}
-            {isError && <span>Категория не найден, вернуться <button>назад</button></span>}
+            {isError && <Notfoundpage />}
             </Row>
     )
 }

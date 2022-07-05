@@ -44,7 +44,7 @@ export const GoodSearch = () => {
                 {options.length > 2 ? options.map(({ label, id }) => {
                     return (
                         <Link key={id} to={`/goods/${id}`} onClick={onOptionClick}>
-                            <li className={css.label} onClick={() => onOptionClick()} >{label}</li>
+                            <li className={css.label}>{label}</li>
                         </Link>
                     )
                 }) : <li className={css.error}>Ничего не найдено, попробуйте изменить запрос</li>}

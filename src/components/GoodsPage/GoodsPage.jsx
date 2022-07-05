@@ -16,8 +16,6 @@ export function GoodsPage () {
         dispatch(fetchCategories())
     }, [dispatch])
 
-    console.log(goods);
-
     const columns = [
         {
             title: '№',

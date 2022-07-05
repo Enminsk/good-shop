@@ -6,6 +6,7 @@ import { productPageSelectors } from '../../store/productPageSlice';
 import { Divider } from 'antd';
 import css from './styles.module.css';
 import { Spinner } from '../common';
+import { Notfoundpage } from '../Notfoundpage';
 
 
 export const ProductPage = () => {
@@ -42,8 +43,7 @@ export const ProductPage = () => {
                     </div>
                 </div>
             ))}
-            {isError && <span>Продукт не найден, вернуться <button onBack={() => navigate(-1)}>назад</button></span>}
+            {isError && <Notfoundpage />}
         </div>
-        
     )
 }
