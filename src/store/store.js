@@ -4,6 +4,7 @@ import { reducer as categoriesReducer } from './categoriesSlice/categoriesSlice'
 import { reducer as popularCategoriesReducer } from "./popularCategoriesSlice/popularCategoriesSlice";
 import { reducer as goodsReducer } from "./goodsSlice/goodsSlice";
 import { reducer as categoryPageReducer } from "./categoryPageSlice/categoryPageSlice";
+import { reducer as productPageReducer } from "./productPageSlice/productPageSlice";
 
 
 
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
     categories: categoriesReducer,
     category: popularCategoriesReducer,
     categoryPage: categoryPageReducer,
+    productPage: productPageReducer,
 });
 
 export const store = configureStore({

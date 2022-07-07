@@ -1,8 +1,8 @@
 import { LOAD_STATUSES } from '../constants';
 
-export const getCategoryPageSelectors = (state) => state.categoryPage;
-export const getLoadStatusSelector = (state) => getCategoryPageSelectors(state).loadStatus;
-export const getCategoryPage = (state) => getCategoryPageSelectors(state).data;
+export const getProductPageSelector = (state) => state.productPage;
+export const getLoadStatusSelector = (state) => getProductPageSelector(state).loadStatus;
+export const getProductPage = (state) => getProductPageSelector(state).data;
 
 export const getIsLoadingSeletor = (state) => {
     return getLoadStatusSelector(state) === LOAD_STATUSES.LOADING;

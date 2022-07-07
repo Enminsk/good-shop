@@ -7,7 +7,7 @@ export const Card = (({ img, price, label }) => {
     return (
         <CardAntd
             hoverable
-            style={{ width: 250, margin: 2 }}
+            style={{ width: 220, margin: 2 }}
             cover={<img alt="example" src={img} />}
         >
             <Meta title={price} description={label} />

@@ -1,4 +1,4 @@
-import { request } from "./resource";
+import { request } from "./request";
 
 export class Api {
     andPoints = {
@@ -18,5 +18,13 @@ export class Api {
     getGoodsByCategoryId = (categoryTypeIds) => {
         const url = this.andPoints.goods;
         return request(url, { categoryTypeIds })
+    }
+    getGoodById = (ids) => {
+        const url = this.andPoints.goods;
+        return request(url, { ids })
+    }
+    getSearch = (text) => {
+        const url = this.andPoints.goods;
+        return request(url, { text });
     }
 };
